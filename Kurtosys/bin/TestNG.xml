@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="KurtosysTest " parallel="false" verbose="2">
+<parameter name="appURL" value="https://am.jpmorgan.com/gb/en/asset-management/gim/adv/home"/>
+<parameter name="browserType" value="chrome"/>
+  <test name="chromeTest1">
+    <classes>
+      
+      <class name="com.kurtosys.test.HomePage_Test"/>
+      <class name="com.kurtosys.test.ViewOurFeatureFunds_Test"/>
+     
+    
+      
+    </classes>
+    </test>
+</suite>
+
