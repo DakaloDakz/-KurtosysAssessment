@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "69420148-d680-4c29-ae8f-5592a39d946d",
+		"name": "Kurtosys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "kurtosysapi",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "30a55889-8a1a-4b3c-a4b9-c8c51f4e9417",
+						"exec": [
+							"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200))",
+							"",
+							"pm.test(\"properties_pub object exists\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"properties_pub\");",
+							"});",
+							"",
+							"pm.test(\"the object has a property base_currency and that the value of this property is not empty\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"base_currency\", \"USD\");",
+							"});",
+							"",
+							"pm.test('the object has a property base_currency and that the value of this property is not empty ', function() {",
+							"    const jsonData = pm.response.json();",
+							"  pm.expect(jsonData).to.have.property(\"base_currency\", \"USD\");",
+							"});",
+							"",
+							"",
+							"size 769.29kb",
+							"Time 6.65s",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.kurtosys.io/tools/ksys373/api/fund/searchentity?data-version=1562843391575&req=%7B%22type%22%3A%22CLSS%22%2C%22search%22%3A%5B%7B%22property%22%3A%22core_holding_id%22%2C%22values%22%3A%5B%22GEMRE%22%5D%2C%22matchtype%22%3A%22MATCH%22%7D%2C%7B%22property%22%3A%22core_holding_id%22%2C%22values%22%3A%5B%22GEMRE%22%5D%2C%22matchtype%22%3A%22MATCH%22%7D%5D%2C%22include%22%3A%7B%22allocations%22%3A%7B%7D%2C%22statistics%22%3A%7B%7D%2C%22timeseries%22%3A%7B%7D%7D%2C%22culture%22%3A%22en-GB%22%2C%22applyFormats%22%3Afalse%2C%22limit%22%3A0%2C%22fundList%22%3A%22Institutional_NL%22%7D ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"kurtosys",
+						"io"
+					],
+					"path": [
+						"tools",
+						"ksys373",
+						"api",
+						"fund",
+						"searchentity"
+					],
+					"query": [
+						{
+							"key": "data-version",
+							"value": "1562843391575"
+						},
+						{
+							"key": "req",
+							"value": "%7B%22type%22%3A%22CLSS%22%2C%22search%22%3A%5B%7B%22property%22%3A%22core_holding_id%22%2C%22values%22%3A%5B%22GEMRE%22%5D%2C%22matchtype%22%3A%22MATCH%22%7D%2C%7B%22property%22%3A%22core_holding_id%22%2C%22values%22%3A%5B%22GEMRE%22%5D%2C%22matchtype%22%3A%22MATCH%22%7D%5D%2C%22include%22%3A%7B%22allocations%22%3A%7B%7D%2C%22statistics%22%3A%7B%7D%2C%22timeseries%22%3A%7B%7D%7D%2C%22culture%22%3A%22en-GB%22%2C%22applyFormats%22%3Afalse%2C%22limit%22%3A0%2C%22fundList%22%3A%22Institutional_NL%22%7D "
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
